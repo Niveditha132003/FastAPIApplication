@@ -1,0 +1,9 @@
+# A dockerignore file is used to specify which files and directories Docker should ignore when building an image. It helps improve build performance and reduces the size of the image by excluding unnecessary files or directories.
+Dockerfile
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+# Ignore Git files
+.git/
+.gitignore

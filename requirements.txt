@@ -1,0 +1,9 @@
+pydantic
+snowflake-connector-python
+pytest
+fastapi
+uvicorn
+httpx
+
+
+

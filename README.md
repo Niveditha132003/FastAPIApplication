@@ -1,7 +1,7 @@
 # Final Project
 
 ## Description
-This project is a web application built using FastAPI and Snowflake. It provides APIs for managing player data, including adding players, retrieving all players, and fetching player details by ID.
+This is a application built using FastAPI and Snowflake. It provides APIs for managing player data, including adding players, retrieving all players, and fetching player details by ID.
 
 ## Features
 - Add new players to the database.
@@ -12,8 +12,8 @@ This project is a web application built using FastAPI and Snowflake. It provides
 ## Installation and Execution
 
 1. Clone the repository:
-   ```bash
-   git clone <repository-url>
+
+   git clone https://github.com/Niveditha132003/FastAPI-Application.git
    cd Final_Project
 
 2. Install dependencies:
