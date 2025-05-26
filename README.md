@@ -16,19 +16,24 @@ This is a application built using FastAPI and Snowflake. It provides APIs for ma
    git clone https://github.com/Niveditha132003/FastAPI-Application.git
    cd Final_Project
 
+
 2. Install dependencies:
    pip install -r requirements.txt
 
+
 3. Set up the Snowflake database:
-Update the get_connection function in application/services/snowflake_insertion.py with your Snowflake credentials.
+create .env file inside application folder to use your snowflake credentials.
 Run the script to create and populate the playertable:
-python application/services/snowflake_insertion.py
+python3 application/services/snowflake_insertion.py
+
 
 4. Start the FastAPI server:
 uvicorn application.main:app --reload
 
+
 5. Access the API documentation at:
 Swagger UI: http://127.0.0.1:8000/docs
+
 
 6. API Endpoints
       1. Home
@@ -62,29 +67,54 @@ Swagger UI: http://127.0.0.1:8000/docs
          Method: GET
          Description: Fetches details of a specific player by their ID
 
+
+
 7. Project Structure
+
+
 Final_Project/
 ├── application/
-│   ├── main.py                # Entry point for the FastAPI app
+│   ├── main.py                   # Entry point for the FastAPI app
+│   ├── .env                      # Environment variables file
 │   ├── routes/
-│   │   └── player_routes.py   # API routes for player management
+│   │   └── player_routes.py      # API routes for player management
 │   ├── models/
-│   │   └── player.py          # Pydantic models for player data
+│   │   └── player.py             # Pydantic models for player data
 │   ├── services/
-│   │   └── snowflake_insertion.py # Snowflake database setup and insertion
-├── [README.md]                # Project documentation
-├── [requirements.txt]         # Python dependencies
+│   │   └── snowflake_insertion.py and database.py              # Snowflake DB setup and insertion
+├── custom_logging/
+│   ├── logger.py                 # Custom logger setup
+│   └── loggerconfig.yaml         # Logger configuration
+├── logs/                         # Log files directory
+├── .dockerignore                 # Files/folders to exclude from Docker build context
+├── .gitignore                    # Files/folders to exclude from Git tracking
+├── Dockerfile                    # Docker build configuration
+├── README.md                     # Project documentation
+├── requirements.txt              # Python dependencies
+
+
+
 
 8. Requirements
 Python 3.8+
 FastAPI
 Uvicorn
 Snowflake Connector
+Pydantic
+PyYAML
 
-9. License
+
+9. Logging
+Custom logging is configured using `custom_logging/logger.py` and `custom_logging/loggerconfig.yaml`.  
+- **RotatingFileHandler** is used to write logs to files in the `logs/` directory, automatically rotating and retaining up to 3 backup log files.
+- **StreamHandler** is used to output logs to the console (stdout).
+
+
+10. License
 This project is licensed under the MIT License. See the LICENSE file for details
 
-10. Author
+
+11. Author
 Niveditha
         
 
