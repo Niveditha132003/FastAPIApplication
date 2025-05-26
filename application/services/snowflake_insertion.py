@@ -1,21 +1,33 @@
 import snowflake.connector
 import random
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 def get_connection():
+    """
+    Establish and return a connection to the Snowflake database using environment variables.
+    """
     return snowflake.connector.connect(
-        user='NIVEDITHA',
-        password='90351@Revanthsai',
-        account='frtcizk-rr68458',
-        warehouse='COMPUTE_WH',
-        database='MYDB',
-        schema='MYSCHEMA'
+        user=os.getenv("SNOWFLAKE_USER"),
+        password=os.getenv("SNOWFLAKE_PASSWORD"),
+        account=os.getenv("SNOWFLAKE_ACCOUNT"),
+        warehouse=os.getenv("SNOWFLAKE_WAREHOUSE"),
+        database=os.getenv("SNOWFLAKE_DATABASE"),
+        schema=os.getenv("SNOWFLAKE_SCHEMA")
     )
 
-
 def setup_table():
+    """
+    Creates the 'playertable' table in Snowflake and inserts randomized player data.
+    """
     conn = get_connection()
-    cur = conn.cursor() 
+    cur = conn.cursor()
+    
     try:
+        # Create table
         cur.execute("""
             CREATE OR REPLACE TABLE playertable (
                 player_id INT,
@@ -27,6 +39,8 @@ def setup_table():
                 Balls INT
             )
         """)
+
+        # Player data with score and ball range
         data = [
             (1,'Virat', 'RCB', 1, 'KKR', (60, 100), (40, 60)),
             (2,'Rohit', 'MI', 2, 'CSK', (20, 40), (10, 30)),
@@ -47,29 +61,38 @@ def setup_table():
             (17,'Sudharsan', 'GT', 16, 'MI', (67, 81), (40, 60)),
             (18,'Hasranga', 'RR', 15, 'MI', (64, 67), (60, 80)),
             (19,'Shivam Dubey', 'RR', 4, 'SRH', (24, 78), (21, 46)),
+        ]
 
-]
-        
-        
+        # Generate random scores and balls
         insert_values = []
-        for player_id,player, team, match_no, vs_team, score_range, balls_range in data:
-            score = random.randint(score_range[0], score_range[1])
-            balls = random.randint(balls_range[0], balls_range[1])
+        for player_id, player, team, match_no, vs_team, score_range, balls_range in data:
+            score = random.randint(*score_range)
+            balls = random.randint(*balls_range)
             insert_values.append(f"({player_id},'{player}', '{team}', {match_no}, '{vs_team}', {score}, {balls})")
-        
-        insert_query = "INSERT INTO playertable (Player_id, Player, Team, MatchNo, Vs_Team, Score, Balls) VALUES "
-        insert_query += ", ".join(insert_values)
+
+        # Construct and execute INSERT query
+        insert_query = (
+            "INSERT INTO playertable (Player_id, Player, Team, MatchNo, Vs_Team, Score, Balls) VALUES "
+            + ", ".join(insert_values)
+        )
 
         cur.execute(insert_query)
         conn.commit()
+
+        #Printing the inserted data
         cur.execute("SELECT * FROM playertable")
         for row in cur:
-            print(f"{row[0]}, {row[1]}, {row[2]}, {row[3]}, {row[4]}, {row[5]},{row[6]}")
+            print(row)
 
     except Exception as e:
         print("Error occurred while setting up table:", e)
+
     finally:
-        cur.close()  
+        cur.close()
         conn.close()
-get_connection()
-setup_table()
+
+
+if __name__ == "__main__":
+    setup_table()
+
+

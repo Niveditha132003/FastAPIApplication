@@ -1,0 +1,5 @@
+{
+  "app/tests/test_player.py": true,
+  "application/tests/test_player.py::test_add_player": true,
+  "application/tests/test_player.py::test_get_players": true
+}

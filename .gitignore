@@ -1,0 +1,9 @@
+# Python cache files
+__pycache__/
+# Ignore the .env file inside application folder
+application/.env
+# Logs folder
+logs/
+# Docker-related files
+.dockerignore
+

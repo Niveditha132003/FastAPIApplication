@@ -1,0 +1,8 @@
+[
+  "application/tests/test_player.py::test_add_player",
+  "application/tests/test_player.py::test_add_player_success",
+  "application/tests/test_player.py::test_get_all_players",
+  "application/tests/test_player.py::test_get_players",
+  "application/tests/test_player.py::test_home",
+  "application/tests/test_player.py::test_player_on_id"
+]

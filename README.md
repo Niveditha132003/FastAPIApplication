@@ -1,3 +1,6 @@
+
+```text
+
 # Final Project
 
 ## Description
@@ -71,9 +74,7 @@ Swagger UI: http://127.0.0.1:8000/docs
 
 7. Project Structure
 
-## 7. Project Structure
 
-```text
 Final_Project/
 ├── application/
 │   ├── main.py                   # Entry point for the FastAPI app
