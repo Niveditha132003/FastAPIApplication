@@ -13,7 +13,7 @@ This is a application built using FastAPI and Snowflake. It provides APIs for ma
 
 1. Clone the repository:
 
-   git clone https://github.com/Niveditha132003/FastAPI-Application.git
+   git clone https://github.com/Niveditha132003/FastAPIApplication.git
    cd Final_Project
 
 
@@ -71,7 +71,9 @@ Swagger UI: http://127.0.0.1:8000/docs
 
 7. Project Structure
 
+## 7. Project Structure
 
+```text
 Final_Project/
 ├── application/
 │   ├── main.py                   # Entry point for the FastAPI app
@@ -81,16 +83,18 @@ Final_Project/
 │   ├── models/
 │   │   └── player.py             # Pydantic models for player data
 │   ├── services/
-│   │   └── snowflake_insertion.py and database.py              # Snowflake DB setup and insertion
+│   │   ├── snowflake_insertion.py  # Snowflake DB insertion
+│   │   └── database.py             # Snowflake DB connection
 ├── custom_logging/
 │   ├── logger.py                 # Custom logger setup
 │   └── loggerconfig.yaml         # Logger configuration
 ├── logs/                         # Log files directory
-├── .dockerignore                 # Files/folders to exclude from Docker build context
-├── .gitignore                    # Files/folders to exclude from Git tracking
+├── .dockerignore                 # Docker build exclusions
+├── .gitignore                    # Git tracking exclusions
 ├── Dockerfile                    # Docker build configuration
 ├── README.md                     # Project documentation
 ├── requirements.txt              # Python dependencies
+
 
 
 
