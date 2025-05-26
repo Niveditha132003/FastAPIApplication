@@ -1,7 +1,7 @@
 
-```text
 
-# Final Project
+
+### Final Project
 
 ## Description
 This is a application built using FastAPI and Snowflake. It provides APIs for managing player data, including adding players, retrieving all players, and fetching player details by ID.
@@ -31,14 +31,16 @@ python3 application/services/snowflake_insertion.py
 
 
 4. Start the FastAPI server:
+
+```bash
 uvicorn application.main:app --reload
+```
 
-
-5. Access the API documentation at:
+6. Access the API documentation at:
 Swagger UI: http://127.0.0.1:8000/docs
 
 
-6. API Endpoints
+7. API Endpoints
       1. Home
          URL: /home
          Method: GET
@@ -72,7 +74,7 @@ Swagger UI: http://127.0.0.1:8000/docs
 
 
 
-7. Project Structure
+8. Project Structure
 
 
 Final_Project/
