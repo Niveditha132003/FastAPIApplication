@@ -1,7 +1,7 @@
 
 
 
-### Final Project
+# Final Project
 
 ## Description
 This is a application built using FastAPI and Snowflake. It provides APIs for managing player data, including adding players, retrieving all players, and fetching player details by ID.
@@ -21,16 +21,18 @@ This is a application built using FastAPI and Snowflake. It provides APIs for ma
 
 
 2. Install dependencies:
+   ```bash
    pip install -r requirements.txt
+   ```
 
 
-3. Set up the Snowflake database:
+4. Set up the Snowflake database:
 create .env file inside application folder to use your snowflake credentials.
 Run the script to create and populate the playertable:
 python3 application/services/snowflake_insertion.py
 
 
-4. Start the FastAPI server:
+5. Start the FastAPI server:
 
 ```bash
 uvicorn application.main:app --reload
@@ -72,7 +74,7 @@ Swagger UI: http://127.0.0.1:8000/docs
          Method: GET
          Description: Fetches details of a specific player by their ID
 
-
+```text
 
 8. Project Structure
 
@@ -96,7 +98,8 @@ Final_Project/
 ├── .gitignore                    # Git tracking exclusions
 ├── Dockerfile                    # Docker build configuration
 ├── README.md                     # Project documentation
-├── requirements.txt              # Python dependencies
+├── requirements.txt              # Python 
+```
 
 
 
