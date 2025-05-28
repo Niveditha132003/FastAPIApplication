@@ -45,12 +45,13 @@ Swagger UI: http://127.0.0.1:8000/docs
 
 
 7. API Endpoints
-      1. Home
+      ```text
+      1. **Home**
          URL: /home
          Method: GET
-         Description: Returns a welcome message.
+         Description: Returns a welcome message
 
-      2. Add Player
+      2. **Add Player**
          URL: /add-player
          Method: POST
          Description: Adds a new player to the database.
@@ -66,15 +67,16 @@ Swagger UI: http://127.0.0.1:8000/docs
           }
 
 
-      3. Get All Players
+      3.** Get All Players**
          URL: /get-players
          Method: GET
          Description: Retrieves all players from the database.
 
-      4. Get Player by ID
+      4. **Get Player by ID**
          URL: /get-player/{id}
          Method: GET
          Description: Fetches details of a specific player by their ID
+      ```
 
 ```text
 
