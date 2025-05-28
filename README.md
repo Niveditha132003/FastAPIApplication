@@ -17,10 +17,12 @@ This is a application built using FastAPI and Snowflake. It provides APIs for ma
 1. Clone the repository:
 
    git clone https://github.com/Niveditha132003/FastAPIApplication.git
+   ```bash
    cd Final_Project
+   ```
 
 
-2. Install dependencies:
+3. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
