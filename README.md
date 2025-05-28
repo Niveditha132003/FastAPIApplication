@@ -36,9 +36,9 @@ python3 application/services/snowflake_insertion.py
 
 5. Start the FastAPI server:
 
-```bash
-uvicorn application.main:app --reload
-```
+   ```bash
+   uvicorn application.main:app --reload
+   ```
 
 6. Access the API documentation at:
 Swagger UI: http://127.0.0.1:8000/docs
